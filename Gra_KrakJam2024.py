@@ -1,5 +1,6 @@
 import pygame
 import sys
+from music import *
 
 pygame.init()
 
@@ -30,17 +31,21 @@ while is_running:
         if event.type == pygame.QUIT:
             is_running = False
 
+        load_music()
+
         if event.type == pygame.MOUSEBUTTONDOWN:
 
             #If the mouse is clicked on the button the game is terminated
             if screen_width/2 <= mouse[0] <= screen_width/2 + 130 and screen_height / 2 <= mouse[1] <= screen_height / 2 + 40:
                 #Move to the next stae in the game
                 #is_running = False
+                load_button_sound()
                 print("Play")
 
             # If the mouse is clicked on the button the game is terminated
             if screen_width/2 <= mouse[0] <= screen_width/2 + 130 and screen_height / 2 + 60 <= mouse[1] <= screen_height / 2 + 120:
                 # Move to the next stae in the game
+                load_button_sound()
                 is_running = False
 
     window.fill((0, 0, 0))
