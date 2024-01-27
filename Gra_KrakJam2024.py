@@ -1,6 +1,8 @@
 import pygame
+import cv2
 import sys
 from music import *
+from PIL import Image
 
 pygame.init()
 
@@ -18,10 +20,6 @@ color_light = (170, 170, 170)
 color_dark = (80, 80, 80)
 
 pygame.font.init()
-
-font = pygame.font.SysFont("Comic Sans MS", 34)
-start_game = font.render("Play", False, start_color)
-quit_game = font.render("Quit", False, start_color)
 
 def game_loop():
     is_running = True
@@ -50,18 +48,16 @@ def game_loop():
 
         #If mouse is hovered on a button it changes to lighter shade
         if WINDOW_WIDTH/2 <= mouse[0] <= WINDOW_WIDTH/2 + 130 and WINDOW_HEIGHT/2 <= mouse[1] <= WINDOW_HEIGHT/2 + 40:  
-            pygame.draw.rect(window,color_light,[WINDOW_WIDTH/2 - 120,WINDOW_HEIGHT/2,260,50])    
+            pygame.draw.rect(window,color_light,[WINDOW_WIDTH/2 - 120,WINDOW_HEIGHT/2,260,50])
         else:  
-            pygame.draw.rect(window,color_dark,[WINDOW_WIDTH/2 - 120,WINDOW_HEIGHT/2,260,50]) 
+            pygame.draw.rect(window,color_dark,[WINDOW_WIDTH/2 - 120,WINDOW_HEIGHT/2,260,50])
 
         #If mouse is hovered on a button it changes to lighter shade
         if WINDOW_WIDTH/2 <= mouse[0] <= WINDOW_WIDTH/2 + 130 and WINDOW_HEIGHT/2 + 60 <= mouse[1] <= WINDOW_HEIGHT/2 + 120:  
             pygame.draw.rect(window,color_light,[WINDOW_WIDTH/2 - 120,WINDOW_HEIGHT/2 + 60,260,80])  
         else:  
             pygame.draw.rect(window,color_dark,[WINDOW_WIDTH/2 - 120,WINDOW_HEIGHT/2 + 60,260,80]) 
-
-        window.blit(start_game, (WINDOW_WIDTH/2 - 40,WINDOW_HEIGHT/2))
-        window.blit(quit_game, (WINDOW_WIDTH/2 - 40, WINDOW_HEIGHT/2 + 60))
+        
         # Update the frames of the screen
         pygame.display.update()
         pygame.display.flip()
