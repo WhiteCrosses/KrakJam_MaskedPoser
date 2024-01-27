@@ -90,7 +90,6 @@ class Gui:
             
             tmp = self.font_manager.draw_text("Hello World")
 
-
             
 
             self.menu_window.blit(self.bg_image, (0, 0))
