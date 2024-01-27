@@ -26,12 +26,12 @@ font = pygame.font.SysFont("Comic Sans MS", 34)
 start_game = font.render("Play", False, start_color)
 quit_game = font.render("Quit", False, start_color)
 
+load_music()
+
 while is_running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             is_running = False
-
-        load_music()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
 
