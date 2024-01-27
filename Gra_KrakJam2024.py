@@ -3,11 +3,10 @@ import sys
 
 pygame.init()
 
-width = input("Enter the width of the window: ")
-height = input("Enter the height of the window: ")
-screen_width = int(width)
-screen_height = int(height)
-res = (screen_width, screen_height)
+WINDOW_WIDTH = 1366
+WINDOW_HEIGHT = 768
+
+res = (WINDOW_WIDTH, WINDOW_HEIGHT)
 
 window = pygame.display.set_mode(res)
 # White color of the button
